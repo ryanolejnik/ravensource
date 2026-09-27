@@ -29,7 +29,6 @@ LICENSE_FILE=		MIT:{{WRKSRC}}/COPYING
 LICENSE_SCHEME=		solo
 
 EXRUN[dev]=		libnghttp2:dev:std
-			libressl:dev:std
 			zlib:dev:std
 EXRUN[tools]=		primary
 
@@ -48,7 +47,7 @@ SHEBANG_FILES=		*/*.pl
 SOVERSION=		${SOVERSION}
 
 [EMBED].DESCRIPTION=			Tiny build - http/s, file, scp via libssh2
-[EMBED].USES_OFF=			ssl
+[EMBED].USES_OFF=			ssl:openssl30
 [EMBED].BUILD_DEPENDS_OFF=		libnghttp2:dev:std
 					groff:primary:std
 [EMBED].BUILDRUN_DEPENDS_OFF=		libnghttp2:primary:std
